@@ -9,7 +9,7 @@ env:
 before_script:
     - composer require symfony/symfony:${SYMFONY_VERSION}
 
-script:	phpunit -c app
+script: phpunit -c app
 
 notifications:
     irc: "irc.freenode.org#symfony-cmf"
