@@ -1,0 +1,33 @@
+{% extends '::base.html.twig' %}
+	{% block title %}Mon artiste{% endblock %}
+	{% block body %}
+            <!-- header -->
+            <div class="row header">
+                <div class="col-md-8">
+                <img src="{{ artist.artists.items.0.images.1.url }}">
+                    <h3 class="name">{{ artist.artists.items.0.name|upper }}</h3><br>
+                    <span class="area"><ul>
+{% for genre in artist.artists.items.0.genres %}
+	<li>{{ genre }}</li>
+{% else %}
+	<li>Aucun genre défini.</li>
+{% endfor %}
+</ul></span>
+                </div>
+            </div>
+                <div class="col-md-5 knobs">
+                    <div class="knob-wrapper">
+                        <input type="text" value="{{ artist.artists.items.0.popularity }}" class="knob" data-thickness=".3" data-inputColor="#e39721" data-fgColor="#620912" data-bgColor="#bc1122" data-width="150" data-readOnly=true />
+                        <div class="info">
+                            <div class="param">
+                                <span class="line blue"></span>
+                                La popularité 
+                            </div>
+                        </div>
+                    </div>
+<br>
+{% for url in artist.artists.items.0.external_urls %}
+	{{ url }}
+{% endfor %}
+{{  googleID }}
+{% endblock %}

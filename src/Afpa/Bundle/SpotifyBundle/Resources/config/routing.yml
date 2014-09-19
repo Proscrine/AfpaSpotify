@@ -1,0 +1,11 @@
+afpa_spotify_homepage:
+    path:     /spotify
+    defaults: { _controller: AfpaSpotifyBundle:Default:index }
+
+afpa_spotify_artist:
+    path:     /spotify/{names}
+    defaults: { _controller: AfpaSpotifyBundle:Default:view }	
+
+afpa_spotify_save:
+    path:     /spotify/save/{names}
+    defaults: { _controller: AfpaSpotifyBundle:Default:save }

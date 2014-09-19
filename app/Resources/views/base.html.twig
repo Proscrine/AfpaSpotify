@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block title %}Mon artiste{% endblock %}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% block stylesheets %}	
+    <!-- bootstrap -->
+    <link href="{{ asset('bundles/afpaspotify/css/bootstrap/bootstrap.css') }}" rel="stylesheet" />
+    <link href="{{ asset('bundles/afpaspotify/css/bootstrap/bootstrap-overrides.css') }}" type="text/css" rel="stylesheet" />
+
+    <!-- libraries -->
+    <link href="{{ asset('bundles/afpaspotify/css/lib/jquery-ui-1.10.2.custom.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('bundles/afpaspotify/css/lib/font-awesome.css') }}" type="text/css') }}" rel="stylesheet" />
+
+    <!-- global styles -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/afpaspotify/css/compiled/layout.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/afpaspotify/css/compiled/elements.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/afpaspotify/css/compiled/icons.css') }}" />
+
+    <!-- this page specific styles -->
+    <link rel="stylesheet" href="{{ asset('bundles/afpaspotify/css/compiled/index.css') }}" type="text/css" media="screen" />
+	<link rel="stylesheet" href="{{ asset('bundles/afpaspotify/css/compiled/user-profile.css') }}" type="text/css" media="screen" />
+    <link rel="stylesheet" href="{{ asset('bundles/afpaspotify/css/compiled/ui-elements.css') }}" type="text/css" media="screen" />
+	
+    <!-- open sans font -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css' />
+
+    <!-- lato font -->
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css' />
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+	{% endblock %}
+	        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+</head>
+    <body>
+		    <header class="navbar navbar-inverse" role="banner">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="index.html"><img src="{{ asset('bundles/afpaspotify/images/spotify-logo-primary-horizontal-dark-background-rgb.jpg') }}" alt="logo" /></a>
+        </div>
+	</header>
+    <div id="sidebar-nav">
+        <ul id="dashboard-menu">
+			<li class="active">
+			<a class="btn-flat danger">DANGER BUTTON</a>
+            </li>
+			<li>
+            <button class="btn glow"><i class="icon-download-alt"></i></button>
+			<a	href="{{ path('afpa_spotify_save',{'names': artist.artists.items.0.name })}}">										
+            save
+            </a>
+            </li>
+        </ul>
+    </div>	
+    <div class="content">	
+	<header class="navbar navbar-inverse">
+		<div id="pad-wrapper" class="user-profile">
+		{% block body %}
+ 
+{% for url in artist.external_urls %}
+	{{ url }}
+{% endfor %}
+		{% endblock %}
+		{% block javascripts %}
+			<!-- scripts -->
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="{{ asset('bundles/afpaspotify/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('bundles/afpaspotify/js/jquery-ui-1.10.2.custom.min.js') }}"></script>
+    <!-- knob -->
+    <script src="{{ asset('bundles/afpaspotify/js/jquery.knob.js') }}"></script>
+
+
+    <script type="text/javascript">
+        $(function () {
+            // jQuery Knobs
+            $(".knob").knob();
+        });
+    </script>
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54897224-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+		{% endblock %}
+    </body>
+</html>

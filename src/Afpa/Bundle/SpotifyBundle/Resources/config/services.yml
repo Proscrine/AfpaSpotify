@@ -1,0 +1,11 @@
+parameters:
+#    afpa_spotify.example.class: Afpa\Bundle\SpotifyBundle\Example
+
+services:
+#    afpa_spotify.example:
+#        class: %afpa_spotify.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
+    afpa_spotify.twig.Pop10Extension:
+        class: Afpa\Bundle\SpotifyBundle\Twig\Extension\Pop10Extension
+        tags:
+            - { name: twig.extension }

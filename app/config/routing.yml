@@ -1,0 +1,3 @@
+afpa_spotify:
+    resource: "@AfpaSpotifyBundle/Resources/config/routing.yml"
+    prefix:   /

@@ -1,0 +1,25 @@
+{
+  "external_urls" : {
+    "spotify" : "https://open.spotify.com/artist/3pulcT2wt7FEG10lQlqDJL"
+  },
+  "genres" : [ "melodic death metal", "viking metal" ],
+  "href" : "https://api.spotify.com/v1/artists/3pulcT2wt7FEG10lQlqDJL",
+  "id" : "3pulcT2wt7FEG10lQlqDJL",
+  "images" : [ {
+    "height" : 414,
+    "url" : "https://i.scdn.co/image/147cc19849768bca4ae35adfbe8e16f3bc3d92bc",
+    "width" : 600
+  }, {
+    "height" : 138,
+    "url" : "https://i.scdn.co/image/3e42132d2b4dedfdfbecf663716ea1be80824e13",
+    "width" : 200
+  }, {
+    "height" : 44,
+    "url" : "https://i.scdn.co/image/57ff6b76cf40413ed2563001e5b693a237d081fa",
+    "width" : 64
+  } ],
+  "name" : "Amon Amarth",
+  "popularity" : 44,
+  "type" : "artist",
+  "uri" : "spotify:artist:3pulcT2wt7FEG10lQlqDJL"
+}

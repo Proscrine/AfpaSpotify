@@ -1,0 +1,27 @@
+Afpa\Bundle\SpotifyBundle\Entity\artist:
+    type: entity
+    table: null
+    repositoryClass: Afpa\Bundle\SpotifyBundle\Entity\artistRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        images:
+            type: string
+            length: 255
+        genres:
+            type: array
+            nullable: true
+        popularity:
+            type: string
+            length: 255
+        url:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }
